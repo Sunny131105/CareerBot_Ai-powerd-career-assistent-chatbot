@@ -15,7 +15,7 @@ r = requests.post(
     f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
     json={'contents': [{'parts': [{'text': 'Reply with: API working!'}]}]},
     headers={'x-goog-api-key': key},
-    timeout=30,
+    timeout=120,
 )
 print("Status:", r.status_code)
 print(r.json()['candidates'][0]['content']['parts'][0]['text'] if r.ok else r.text)
