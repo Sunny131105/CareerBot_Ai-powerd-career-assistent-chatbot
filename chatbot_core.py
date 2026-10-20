@@ -68,7 +68,7 @@ def call_gemini(payload, api_key, model, fallback_model=''):
                 api_url(m),
                 json=payload,
                 headers={'Content-Type': 'application/json', 'x-goog-api-key': api_key},
-                timeout=30,
+                timeout=90,
             )
             if response.status_code not in (429, 500, 503):
                 return response
